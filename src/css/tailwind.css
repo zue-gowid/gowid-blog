@@ -1,0 +1,29 @@
+@tailwind base;
+html {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Pretendard;
+    font-weight: 100;
+    src: url("../fonts/pretendard-extralight.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: Pretendard;
+    font-weight: 400;
+    src: url("../fonts/pretendard-regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: Pretendard;
+    font-weight: 700;
+    src: url("../fonts/pretendard-bold.woff2") format("woff2");
+  }
+}
