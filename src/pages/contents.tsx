@@ -13,17 +13,36 @@ export const query = graphql`
         name
       }
     }
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date
+          }
+          excerpt
+        }
+      }
+    }
   }
 `;
 
 const Contents = ({ data }) => {
-  console.log("data: ", data.allFile.nodes.map((item) => item.name)[0]);
+  console.log(
+    "data: ",
+    data.allMarkdownRemark.edges.map((node) => node.node.id)
+  );
   return (
     <main>
-      <Link to="/">{data.site.siteMetadata.title}!</Link>
+      <Link to="/">{data.site.siteMetadata.title}</Link>
       <ul>
-        {data.allFile.nodes.map((node) => (
-          <li key={node.name}>{node.name}!</li>
+        {data.allMarkdownRemark.edges.map((edge) => (
+          <React.Fragment key={edge.node.id}>
+            <li>title: {edge.node.frontmatter.title}</li>
+            <li>excerpt: {edge.node.excerpt}</li>
+            <li>date: {edge.node.frontmatter.date}</li>
+          </React.Fragment>
         ))}
       </ul>
     </main>
