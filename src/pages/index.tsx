@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import * as React from "react";
 import "../css/tailwind.css";
 
@@ -24,6 +25,7 @@ const IndexPage = () => {
           </div>
         </article>
       </section>
+      <Link to="/contents">Contents</Link>
       <footer>gowid 257-12-121344</footer>
     </main>
   );
